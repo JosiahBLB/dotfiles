@@ -1,0 +1,8 @@
+#!/bin/sh
+
+alias ls="lsd" 
+alias la="lsd -lA --no-symlink --date '+%Y-%m-%d %X'"
+alias lt="lsd --tree"
+alias ldir="lsd -Ad --tree"
+alias lat="lsd -A --tree"
+alias lsg="git ls-files --others --exclude-standard --cached --directory | grep -v '/' | xargs lsd"

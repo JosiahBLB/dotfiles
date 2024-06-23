@@ -1,0 +1,13 @@
+/plugins
+/tmux
+/git
+/nvim
+/iterm2/AppSupport
+/iterm2/sockets
+/nix-darwin/result
+/coc
+
+.zshenv
+.zshrc
+.zcompdump
+*.log
