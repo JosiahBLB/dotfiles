@@ -9,3 +9,8 @@
 
 ## Issues
 - I accidentally reset (`⌘-R`) iterm2 and lost the ability to run binaries. This was fixed by temporarily adding the following to \$PATH `export PATH="$PATH:/run/current-system/sw/bin"` and then running `darwin-rebuild switch --flake .` again
+
+## Useful Commands
+
+Used this to get update for the latest nixpkgs where `<input>` was `nixpkgs`
+`nix flake lock --update-input <input>`

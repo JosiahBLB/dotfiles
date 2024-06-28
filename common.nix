@@ -11,10 +11,11 @@
   environment.systemPackages = with pkgs; [
     vim
     neovim
-    cmake
     ninja
     unzip
     vscode
+    nodejs_20
+    glances
     lazygit # git gui
     lsd # ls and tree replacement
     ripgrep # grep replacement
@@ -25,6 +26,8 @@
     tmux # terminal multiplexer (an alternative is zellij)
     stevenblack-blocklist
   ];
+
+  fonts.packages = with pkgs; [ jetbrains-mono ];
 
   environment.variables.EDITOR = "nvim";
 

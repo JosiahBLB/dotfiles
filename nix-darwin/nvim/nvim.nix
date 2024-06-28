@@ -129,6 +129,7 @@
     pyright # python
     lua-language-server
     nodePackages_latest.typescript-language-server
+    nodePackages_latest.bash-language-server
     nil # nix
 
     # FORMATTERS
@@ -138,6 +139,7 @@
     stylua # lua
     prettierd # typescript
     cmake-format
+    shfmt
 
     # LANGUAGES
     lua

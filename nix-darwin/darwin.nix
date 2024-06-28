@@ -3,7 +3,7 @@
   # define the software you want specific to darwin
   environment.systemPackages = with pkgs; [
     iterm2 # terminal emulator
-    pkg-config
+    # pkg-config
     # davinic-resolve # video editing (only avaliable in x86_64-linux)
   ];
 
@@ -28,9 +28,17 @@
       "google-drive" # chosen cloud storage
       "microsoft-office" # TODO: remove after finished uni
       "visual-studio-code" # we only want this for debugging c/c++
+      "discord"
     ];
     brews = [
       # commandline tools
+
+      # c++ glfw projects
+      "pkg-config"
+      "libxinerama"
+      "libxcursor"
+      "xorg-server"
+      "mesa-glu"
     ];
   };
 

@@ -13,9 +13,10 @@
     history.size = 10000;
     dotDir = ".config";
     initExtra = ''
-      ${builtins.readFile ./functions.zsh}
-      ${builtins.readFile ./opts.zsh}
-      ${builtins.readFile ./aliases.zsh}
+      ${builtins.readFile ./env.sh}
+      ${builtins.readFile ./opts.sh}
+      ${builtins.readFile ./aliases.sh}
+      ${builtins.readFile ./functions.sh}
     '';
     plugins = with pkgs; [
       {

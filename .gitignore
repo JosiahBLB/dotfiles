@@ -9,5 +9,5 @@
 
 .zshenv
 .zshrc
-.zcompdump
+.zcompdump*
 *.log

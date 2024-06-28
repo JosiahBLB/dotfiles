@@ -63,11 +63,14 @@ local lspconfig = require("lspconfig")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
+-- See here for their names:
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local servers = {
 	"clangd",
 	"nil_ls",
 	"tsserver",
 	"pyright",
+	"bashls",
 }
 
 for _, lsp in ipairs(servers) do
