@@ -21,18 +21,24 @@
       appdir = "~/Applications";
       require_sha = true;
     };
+    # gui applications
     casks = [
-      # gui applications
       "rectangle" # window management
       "cryptomator" # client side cloud storage encryption
       "google-drive" # chosen cloud storage
-      "microsoft-office" # TODO: remove after finished uni
-      "visual-studio-code" # we only want this for debugging c/c++
+      "visual-studio-code"
       "discord"
-    ];
-    brews = [
-      # commandline tools
+      "balenaetcher" # flashing iso's
 
+      # cli
+      "1password-cli"
+
+      # TODO: remove after finished uni
+      "microsoft-office"
+      "microsoft-teams"
+    ];
+    # commandline tools
+    brews = [
       # c++ glfw projects
       "pkg-config"
       "libxinerama"

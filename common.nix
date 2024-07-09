@@ -9,12 +9,17 @@
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "vscode" ];
   # define the software you want for all installations
   environment.systemPackages = with pkgs; [
+    # editors
     vim
     neovim
-    ninja
-    unzip
     vscode
+
+    # dev
+    ninja
     nodejs_20
+
+    # cli tools
+    unzip
     glances
     lazygit # git gui
     lsd # ls and tree replacement
@@ -24,6 +29,8 @@
     tealdeer # man replacement
     sioyek # pdf reader
     tmux # terminal multiplexer (an alternative is zellij)
+
+    # networking
     stevenblack-blocklist
   ];
 
