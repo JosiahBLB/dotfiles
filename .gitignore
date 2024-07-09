@@ -6,6 +6,7 @@
 /iterm2/sockets
 /nix-darwin/result
 /coc
+/op
 
 .zshenv
 .zshrc
