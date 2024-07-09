@@ -49,52 +49,55 @@
     {
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#Josiahs-MacBook-Pro
-      darwinConfigurations."Josiahs-MacBook-Pro" = darwin.lib.darwinSystem {
-        system = "x86_64-darwin";
-        modules = [
-          ./common.nix
-          ./nix-darwin/darwin.nix
+      darwinConfigurations = {
+        genericDarwin = darwin.lib.darwinSystem {
+          system = "x86_64-darwin";
+          modules = [
+            ./common.nix
+            ./nix-darwin/darwin.nix
 
-          nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              enable = true;
-              user = "josiah";
+            nix-homebrew.darwinModules.nix-homebrew
+            {
+              nix-homebrew = {
+                enable = true;
+                user = "josiah";
 
-              taps = {
-                "homebrew/homebrew-core" = homebrew-core;
-                "homebrew/homebrew-cask" = homebrew-cask;
-                "homebrew/homebrew-bundle" = homebrew-bundle;
+                taps = {
+                  "homebrew/homebrew-core" = homebrew-core;
+                  "homebrew/homebrew-cask" = homebrew-cask;
+                  "homebrew/homebrew-bundle" = homebrew-bundle;
+                };
+                mutableTaps = false;
               };
-              mutableTaps = false;
-            };
-          }
+            }
 
-          # TODO: Split home-manager up for system specific install
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.josiah = import ./nix-darwin/home.nix;
-            home-manager.extraSpecialArgs = {
-              inherit inputs;
-            };
-          }
-        ];
-        specialArgs = {
-          inherit inputs outputs;
+            # TODO: Split home-manager up for system specific install
+            home-manager.darwinModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.josiah = import ./nix-darwin/home.nix;
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+              };
+            }
+          ];
+          specialArgs = {
+            inherit inputs outputs;
+          };
         };
       };
 
       nixosConfigurations = {
-        system = "x86_64-linux";
-        modules = [ ./common.nix ];
-        specialArgs = {
-          inherit inputs outputs;
+        genericLinux = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./common.nix ];
+          specialArgs = {
+            inherit inputs outputs;
+          };
         };
       };
 
       # Expose the package set, including overlays, for convenience.
-      darwinPackages = self.darwinConfigurations."Josiahs-MacBook-Pro".pkgs;
     };
 }
