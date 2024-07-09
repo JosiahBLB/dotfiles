@@ -1,6 +1,6 @@
 #!/bin/sh
 
-alias ls="lsd" 
+alias ls="lsd"
 alias la="lsd -lA --no-symlink --date '+%Y-%m-%d %X'"
 alias lt="lsd --tree"
 alias ldir="lsd -Ad --tree"
