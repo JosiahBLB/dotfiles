@@ -1,10 +1,16 @@
 ## Manual Configuration
+
+### Nix Installation
+1. (Ubuntu) Install curl and git `sudo apt install curl; sudo apt install git` 
+2. (All) Use [determinate systems installer](https://github.com/DeterminateSystems/nix-installer) to install the Nix package manager
+3. (MacOS) Install [nix-darwin](https://github.com/LnL7/nix-darwin) which provides access to MacOS system settings
+
 ### Iterm2
 - Importing colors using `Profiles > Colors > Color > Color Presets... > Import...` 
 - Setting compatible terminal keymappings using `Profiles > Keys > Key Mappings > Presets... > Natural Text Editing`
 - Un-setting `Apps can change how keys are reported` in `Profiles > Keys > General`
-- Setting `Left Option key` to `Esc+` in `Profiles > Keys > General` [source](https://github.com/helix-editor/helix/issues/2280#issuecomment-1165542932)
-- Setting `Applications in terminal may access clipboard` in `General > Selection` [source](https://github.com/helix-editor/helix/issues/8715)
+- Setting `Left Option key` to `Esc+` in `Profiles > Keys > General` ([source](https://github.com/helix-editor/helix/issues/2280#issuecomment-1165542932))
+- Setting `Applications in terminal may access clipboard` in `General > Selection` ([source](https://github.com/helix-editor/helix/issues/8715))
 - Setting font to `JetBrainsMono Nerd Font Mono` with font size 14
 
 ## Issues
@@ -12,5 +18,18 @@
 
 ## Useful Commands
 
-Used this to get update for the latest nixpkgs where `<input>` was `nixpkgs`
-`nix flake lock --update-input <input>`
+Used the following command to get the latest nixpkgs where `<input>` was `nixpkgs`. This can be used for any of your flake inputs to update your flake.lock file.
+```sh
+nix flake lock --update-input <input>
+```
+
+## Helpful Nix Related Links
+### Nix Programming
+[Introduction to Nix programming](https://nixcloud.io/tour/?id=introduction/nix)\
+[Nix offical documentation](https://nix.dev/)\
+[Nix API search](https://noogle.dev/)
+
+### Packaging and Configuration
+[Nix package search](https://search.nixos.org/packages) (Nix options search also found here)\
+[Nix-darwin options search](https://daiderd.com/nix-darwin/manual/index.html)\
+[Home-manager options search](https://home-manager-options.extranix.com/)
