@@ -86,6 +86,14 @@
         };
       };
 
+      nixosConfigurations = {
+        system = "x86_64-linux";
+        modules = [ ./common.nix ];
+        specialArgs = {
+          inherit inputs outputs;
+        };
+      };
+
       # Expose the package set, including overlays, for convenience.
       darwinPackages = self.darwinConfigurations."Josiahs-MacBook-Pro".pkgs;
     };

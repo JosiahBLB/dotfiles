@@ -44,7 +44,7 @@
     options = lib.mkDefault "--delete-older-than 7d";
   };
 
-  # TODO: Figure out why these arn't added to our host list
+  # TODO: Figure out why these aren't added to our host list
   # block ads and explict content 
   lib.networking.hostFiles = [ "${pkgs.stevenblack-blocklist}/hosts" ];
 
