@@ -48,7 +48,7 @@
     in
     {
       # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#Josiahs-MacBook-Pro
+      # $ darwin-rebuild build --flake .#genericDarwin
       darwinConfigurations = {
         genericDarwin = darwin.lib.darwinSystem {
           system = "x86_64-darwin";
@@ -71,7 +71,6 @@
               };
             }
 
-            # TODO: Split home-manager up for system specific install
             home-manager.darwinModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -88,16 +87,17 @@
         };
       };
 
-      nixosConfigurations = {
-        genericLinux = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [ ./common.nix ];
-          specialArgs = {
-            inherit inputs outputs;
-          };
+      homeConfigurations = {
+        linuxHome = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          modules = [ ./nix-darwin/home.nix ]; # TODO: split to x86_64-linux config
         };
       };
 
-      # Expose the package set, including overlays, for convenience.
+      # For easy access to home-manager configurations i.e:
+      #   home-manager switch --flake .#linuxHome
+      packages.x86_64-linux = {
+        linuxHome = self.homeConfigurations.linuxHome.activationPackage;
+      };
     };
 }
