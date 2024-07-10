@@ -4,6 +4,7 @@
 1. (Ubuntu) Install curl and git `sudo apt install curl; sudo apt install git` 
 2. (All) Use [determinate systems installer](https://github.com/DeterminateSystems/nix-installer) to install the Nix package manager
 3. (MacOS) Install [nix-darwin](https://github.com/LnL7/nix-darwin) which provides access to MacOS system settings
+4. (All) Install [home-manager](https://nix-community.github.io/home-manager/#sec-install-standalone) standalone version
 
 ### Iterm2
 - Importing colors using `Profiles > Colors > Color > Color Presets... > Import...` 
