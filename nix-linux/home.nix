@@ -41,7 +41,7 @@
   ];
 
   fonts.fontconfig.enable = true;
-  fonts.fontconfig.defaultFonts.monospace = [ "JetBrainsMono Nerd Font" ];
+  fonts.fontconfig.defaultFonts.monospace = [ "JetBrainsMono Nerd Font Mono" ];
 
   # programs.tealdeer = {
   #   enable = true;
