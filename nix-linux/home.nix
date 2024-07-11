@@ -21,7 +21,7 @@
     ../nix-home-manager/nvim/nvim.nix
   ];
 
-  home.activation.chsh = "-s ${pkgs.zsh}/bin/zsh"
+  home.activation.chsh = "-s ${pkgs.zsh}/bin/zsh";
 
   # programs.tealdeer = {
   #   enable = true;
