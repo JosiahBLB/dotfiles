@@ -18,7 +18,6 @@
     tmux
     zsh
     git
-    neovim
     ripgrep
     cmake
     lazygit
