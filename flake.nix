@@ -90,6 +90,13 @@
       homeConfigurations = {
         linuxHome = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
+          modules = [
+            ./nix-linux/home.nix
+            ./nix-linux/home-extra.nix
+          ];
+        };
+        linuxHomeMinimal = home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.x86_64-linux;
           modules = [ ./nix-linux/home.nix ];
         };
       };
@@ -98,6 +105,7 @@
       #   home-manager switch --flake .#linuxHome
       packages.x86_64-linux = {
         linuxHome = self.homeConfigurations.linuxHome.activationPackage;
+        linuxHomeMinimal = self.homeConfigurations.linuxHomeMinimal.activationPackage;
       };
     };
 }
