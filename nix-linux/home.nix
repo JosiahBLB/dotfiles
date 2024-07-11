@@ -7,8 +7,22 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  nixpkgs.config.allowUnfreePredicate =
+    pkg:
+    builtins.elem (lib.getName pkg) [
+      "vscode"
+      "1password-cli"
+      "1password"
+    ];
   home.packages = with pkgs; [
+    zsh
+    vscode
+    ripgrep
     cmake
+    lazygit
+
+    _1password
+    _1password-gui
     # TODO: Figure out how to set this font in iterm2
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
@@ -21,7 +35,10 @@
     ../nix-home-manager/nvim/nvim.nix
   ];
 
-  home.activation.chsh = "-s ${pkgs.zsh}/bin/zsh";
+  home.sessionPath = [
+    "/bin"
+    "/usr/bin"
+  ];
 
   # programs.tealdeer = {
   #   enable = true;
@@ -43,3 +60,10 @@
     # '';
   };
 }
+
+# Where to store HM
+# NobbZ:
+# HMs blessed default would be $XDG_CONFIG_HOME/home-manager IIRC.
+# Personally I have a copy under my generic "Projects" folder, as I treat my system and home config a software project.
+# Though I rarely to never run a switch from the local clone, thats purely for dev and testing. 
+# To actually switch I only use the GH remote

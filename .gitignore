@@ -1,4 +1,5 @@
 
+/lazygit
 /plugins
 /tmux
 /git
@@ -8,6 +9,11 @@
 /nix-darwin/result
 /coc
 /op
+/Code
+/1Password
+/enchant
+/gedit
+/nautilus
 
 .zshenv
 .zshrc
