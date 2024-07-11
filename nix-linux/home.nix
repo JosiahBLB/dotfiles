@@ -15,8 +15,10 @@
       "1password"
     ];
   home.packages = with pkgs; [
+    tmux
     zsh
-    vscode
+    git
+    nvim
     ripgrep
     cmake
     lazygit
