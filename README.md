@@ -6,7 +6,16 @@
 3. (MacOS) Install [nix-darwin](https://github.com/LnL7/nix-darwin) which provides access to MacOS system settings
 4. (All) Install [home-manager](https://nix-community.github.io/home-manager/#sec-install-standalone) standalone version
 
-### Iterm2
+### Using this Flake
+Linux `home-manager switch --flake .#linuxHome`
+MacOS `darwin-rebuild switch --flake .#genericDarwin`
+
+### Zsh (Linux)
+After running home-manager, to set linux to your default shell you need to:
+1. Add the output of `which zsh` to `/etc/shells`
+2. Run `chsh -s "$(which zsh)"; sudo reboot`
+
+### Iterm2 (MacOS)
 - Importing colors using `Profiles > Colors > Color > Color Presets... > Import...` 
 - Setting compatible terminal keymappings using `Profiles > Keys > Key Mappings > Presets... > Natural Text Editing`
 - Un-setting `Apps can change how keys are reported` in `Profiles > Keys > General`
