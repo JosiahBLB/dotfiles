@@ -1,5 +1,3 @@
-#!/bin/sh
-
 # save history from multiple tmux sessions in the same hist file
 export PROMPT_COMMAND='history -a;history -r'
 
