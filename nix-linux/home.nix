@@ -20,10 +20,10 @@
     ripgrep
     cmake
     lazygit
+    lsd
 
     _1password
     _1password-gui
-    # TODO: Figure out how to set this font in iterm2
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
@@ -39,6 +39,9 @@
     "/bin"
     "/usr/bin"
   ];
+
+  fonts.fontconfig.enable = true;
+  fonts.fontconfig.defaultFonts.monospace = [ "JetBrainsMono Nerd Font" ];
 
   # programs.tealdeer = {
   #   enable = true;
