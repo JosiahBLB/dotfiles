@@ -48,15 +48,17 @@
     enable = true;
     showMenubar = false;
     profile = {
-      "default" = {
+      "40ab6d71-30dc-45df-8b04-169460863fb7" = {
+        visibleName = "vscode-dark-plus";
         default = true;
         audibleBell = false;
+        boldIsBright = true;
+        transparencyPercent = null;
         colors = {
           # colours for vscode-like theme
           foregroundColor = "#CCCCCC";
           backgroundColor = "#1E1E1E";
           boldColor = "#FEFFFF";
-          boldIsBright = true;
           palette = [
             "#717171"
             "#E94A51"
