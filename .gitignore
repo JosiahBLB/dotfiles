@@ -1,3 +1,4 @@
+
 /plugins
 /tmux
 /git
@@ -13,3 +14,17 @@
 .zcompdump*
 *.log
 result
+
+# ubuntu
+/dconf
+/environment.d
+/evolution
+/gtk-3.0
+home-manager
+/ibus
+/pulse
+
+.gsd-keyboard.settings-ported
+user-dirs.dirs
+user-dirs.locale
+gnome-initial-setup-done
