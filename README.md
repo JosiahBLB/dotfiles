@@ -7,8 +7,12 @@
 4. (All) Install [home-manager](https://nix-community.github.io/home-manager/#sec-install-standalone) standalone version
 
 ### Using this Flake
-Linux `home-manager switch --flake .#linuxHome`
-MacOS `darwin-rebuild switch --flake .#genericDarwin`
+Linux `home-manager switch --flake github:JosiahBLB/dotfiles#linuxHome`
+MacOS `darwin-rebuild switch --flake github:JosiahBLB/dotfiles#genericDarwin`
+
+Alternatively for development you can use:
+`<cmd> build --flake .#<derivation>` or
+`<cmd> switch --flake .#<derivation>` 
 
 ### Zsh (Linux)
 After running home-manager, to set linux to your default shell you need to:
