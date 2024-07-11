@@ -1,7 +1,7 @@
 { pkgs, lib, ... }:
 {
   home.username = "josiah";
-  home.homeDirectory = lib.mkForce "/Users/josiah";
+  home.homeDirectory = lib.mkForce "/home/josiah";
   home.stateVersion = "24.05"; # keep on latest stable version
 
   # Let Home Manager install and manage itself.
@@ -15,10 +15,10 @@
 
   # load program specific configurations
   imports = [
-    ../nix-home-manager/tmux/tmux.nix
-    ../nix-home-manager/zsh/zsh.nix
-    ../nix-home-manager/git.nix
-    ../nix-home-manager/nvim/nvim.nix
+    ../home-manager/tmux/tmux.nix
+    ../home-manager/zsh/zsh.nix
+    ../home-manager/git.nix
+    ../home-manager/nvim/nvim.nix
   ];
 
   # programs.tealdeer = {

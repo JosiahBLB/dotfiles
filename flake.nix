@@ -54,7 +54,7 @@
           system = "x86_64-darwin";
           modules = [
             ./common.nix
-            ./nix-darwin/darwin.nix
+            ./nix-darwin/default.nix
 
             nix-homebrew.darwinModules.nix-homebrew
             {
@@ -90,7 +90,7 @@
       homeConfigurations = {
         linuxHome = home-manager.lib.homeManagerConfiguration {
           pkgs = nixpkgs.legacyPackages.x86_64-linux;
-          modules = [ ./nix-darwin/home.nix ]; # TODO: split to x86_64-linux config
+          modules = [ ./nix-linux/home.nix ];
         };
       };
 
