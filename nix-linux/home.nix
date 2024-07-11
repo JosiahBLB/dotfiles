@@ -52,15 +52,33 @@
         default = true;
         audibleBell = false;
         colors = {
+          # colours for vscode-like theme
           foregroundColor = "#CCCCCC";
           backgroundColor = "#1E1E1E";
           boldColor = "#FEFFFF";
           boldIsBright = true;
-          palette = [ "#717171" "#E94A51" "#37BE78" "#E2E822" "#396EC7" "#B835BC" "#3BA7CC" "#E5E5E5" "#717171" "#E94A51" "#45D38A" "#F2F84A" "#4E8AE9" "#D26AD6" "#49B7DA" "#E5E5E5" ];
+          palette = [
+            "#717171"
+            "#E94A51"
+            "#37BE78"
+            "#E2E822"
+            "#396EC7"
+            "#B835BC"
+            "#3BA7CC"
+            "#E5E5E5"
+            "#717171"
+            "#E94A51"
+            "#45D38A"
+            "#F2F84A"
+            "#4E8AE9"
+            "#D26AD6"
+            "#49B7DA"
+            "#E5E5E5"
+          ];
         };
       };
     };
-  }
+  };
 
   # programs.tealdeer = {
   #   enable = true;
