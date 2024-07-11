@@ -15,10 +15,10 @@
 
   # load program specific configurations
   imports = [
-    ../home-manager/tmux/tmux.nix
-    ../home-manager/zsh/zsh.nix
-    ../home-manager/git.nix
-    ../home-manager/nvim/nvim.nix
+    ../nix-home-manager/tmux/tmux.nix
+    ../nix-home-manager/zsh/zsh.nix
+    ../nix-home-manager/git.nix
+    ../nix-home-manager/nvim/nvim.nix
   ];
 
   # programs.tealdeer = {
