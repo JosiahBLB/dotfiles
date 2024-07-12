@@ -1,7 +1,15 @@
 { pkgs, lib, ... }:
 {
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "vscode" ];
-  home.packages = with pkgs; [ vscode ];
+  home.packages = with pkgs; [
+    vscode
+    tealdeer
+  ];
+
+  programs.tealdeer = {
+    enable = true;
+    settings.updates.auto_update = true;
+  };
 }
 
 # Where to store HM
