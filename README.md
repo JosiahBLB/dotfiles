@@ -41,7 +41,8 @@ nix flake lock --update-input <input>
 ### Nix Programming
 [Introduction to Nix programming](https://nixcloud.io/tour/?id=introduction/nix)\
 [Nix offical documentation](https://nix.dev/)\
-[Nix API search](https://noogle.dev/)
+[Nix API search](https://noogle.dev/)\
+[Nix flakes](https://wiki.nixos.org/wiki/Flakes)
 
 ### Packaging and Configuration
 [Nix package search](https://search.nixos.org/packages) (Nix options search also found here)\
