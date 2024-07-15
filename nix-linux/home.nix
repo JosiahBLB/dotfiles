@@ -44,6 +44,10 @@
     ../nix-home-manager/nvim/nvim.nix
   ];
 
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
+
   home.sessionPath = [
     "/bin"
     "/usr/bin"
