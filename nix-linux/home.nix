@@ -56,6 +56,18 @@
   fonts.fontconfig.enable = true;
   fonts.fontconfig.defaultFonts.monospace = [ "JetBrainsMono Nerd Font Mono" ];
 
+  dconf.settings = {
+    "org/gnome/terminal/legacy/profiles:/:40ab6d71-30dc-45df-8b04-169460863fb7" = {
+      use-system-font = false;
+    };
+    "org/gnome/desktop/background" = {
+      picture-uri = "file:///home/josiah/.config/wallpaper.jpg";
+    };
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
   programs.gnome-terminal = {
     enable = true;
     showMenubar = false;
@@ -95,6 +107,7 @@
   };
 
   home.file = {
+    ".config/wallpaper.jpg".source = ../wallpaper/black.jpg;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
