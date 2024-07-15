@@ -4,6 +4,9 @@ export PROMPT_COMMAND='history -a;history -r'
 # source powerlevel10k theme
 test -f ~/.config/.p10k.zsh && source ~/.config/.p10k.zsh
 
+# fzf-tab enable popup window
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+
 # ctrl + space to accept zsh suggestions
 bindkey '^ ' autosuggest-accept
 

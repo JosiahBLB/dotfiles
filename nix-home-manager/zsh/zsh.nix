@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     zsh-powerlevel10k
     zsh-autosuggestions
+    zsh-fzf-tab
   ];
 
   programs.zsh = {
@@ -33,6 +34,11 @@
         name = "fast-syntax-highlighting";
         src = zsh-fast-syntax-highlighting;
         file = "share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh";
+      }
+      {
+        name = "fzf-tab";
+        src = zsh-fzf-tab;
+        file = "share/fzf-tab/fzf-tab.plugin.zsh";
       }
     ];
   };

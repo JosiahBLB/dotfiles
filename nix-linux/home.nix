@@ -15,16 +15,24 @@
       "1password"
     ];
   home.packages = with pkgs; [
-    tmux
     zsh
-    git
-    ripgrep
-    cmake
-    lazygit
-    lsd
-
     _1password
     _1password-gui
+
+    # dev
+    cmake
+    git
+    lazygit
+    ninja
+
+    # cli tools
+    ripgrep
+    lsd
+    fzf
+    fd
+    tmux
+
+    # visual
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
@@ -82,13 +90,6 @@
     };
   };
 
-  # programs.tealdeer = {
-  #   enable = true;
-  #   settings.updates.auto_update = true;
-  # };
-
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
   home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
@@ -102,10 +103,3 @@
     # '';
   };
 }
-
-# Where to store HM
-# NobbZ:
-# HMs blessed default would be $XDG_CONFIG_HOME/home-manager IIRC.
-# Personally I have a copy under my generic "Projects" folder, as I treat my system and home config a software project.
-# Though I rarely to never run a switch from the local clone, thats purely for dev and testing. 
-# To actually switch I only use the GH remote
