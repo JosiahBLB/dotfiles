@@ -21,13 +21,14 @@
       sensible # better vim defaults
       vim-tmux-navigator # tmux pane and vim-split aware switching
       vim-sleuth # detect tabstop and shiftwidth automatically
-      which-key-nvim
+      which-key-nvim # key binding help
+      vim-visual-multi # multi-cursors like in vscode
 
-      # syntax highlighting
+      # keymaps for surrounding selections with any character i.e {} or []
       {
-        plugin = (nvim-treesitter.withAllGrammars); # TODO: Use only required langs
+        plugin = nvim-surround;
         type = "lua";
-        config = ''require("nvim-treesitter.configs").setup({ highlight = { enable = true, }})'';
+        config = ''require("nvim-surround").setup()'';
       }
 
       # fuzzy finder
@@ -39,7 +40,7 @@
         config = builtins.readFile ./plugins/telescope.lua;
       }
 
-      # comment out lines using gcc and gbc key combinations
+      # comment out lines using 'gcc' (line) and 'gbc' (block) key combinations
       {
         plugin = comment-nvim;
         type = "lua";
@@ -78,6 +79,13 @@
       /**
         Language Features
       */
+
+      # syntax highlighting
+      {
+        plugin = (nvim-treesitter.withAllGrammars); # TODO: Use only required langs
+        type = "lua";
+        config = ''require("nvim-treesitter.configs").setup({ highlight = { enable = true, }})'';
+      }
 
       # snippets
       # TODO: add vim-doge
