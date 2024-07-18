@@ -1,0 +1,410 @@
+{
+    // VIM
+    "vim.highlightedyank.enable": true,
+    "vim.smartRelativeLine": true,
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "<Leader>",
+                "r",
+                "t"
+            ],
+            "commands": [
+                "cmake.launchTarget"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "s",
+                "f"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "s",
+                "k"
+            ],
+            "commands": [
+                "keybindings.editor.searchKeybindings"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "s",
+                "/"
+            ],
+            "commands": [
+                "workbench.action.quickTextSearch"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "s",
+                "g"
+            ],
+            "commands": [
+                "workbench.action.findInFiles"
+            ]
+        },
+        {
+            "before": [
+                "<Leader>",
+                "t"
+            ],
+            "commands": [
+                "workbench.view.explorer"
+            ]
+        },
+        {
+            "before": [
+                "<C-u>"
+            ],
+            "after": [
+                "<C-u>",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "<C-d>"
+            ],
+            "after": [
+                "<C-d>",
+                "z",
+                "z"
+            ]
+        },
+        {
+            "before": [
+                "n"
+            ],
+            "after": [
+                "n",
+                "z",
+                "z",
+                "z",
+                "v"
+            ]
+        },
+        {
+            "before": [
+                "N"
+            ],
+            "after": [
+                "N",
+                "z",
+                "z",
+                "z",
+                "v"
+            ]
+        },
+        {
+            "before": [
+                "<C-n>"
+            ],
+            "command": [
+                "editor.action.addSelectionToNextFindMatch"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "c",
+                "c"
+            ],
+            "commands": [
+                "editor.action.CommentLine"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "b",
+                "c"
+            ],
+            "commands": [
+                "editor.action.blockComment"
+            ]
+        },
+        {
+            "before": [
+                "<C-k>"
+            ],
+            "commands": [
+                "workbench.action.focusAboveGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-j>"
+            ],
+            "commands": [
+                "workbench.action.focusBelowGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-h>"
+            ],
+            "commands": [
+                "workbench.action.focusLeftGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-l>"
+            ],
+            "commands": [
+                "workbench.action.focusRightGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-a>",
+                "v"
+            ],
+            "commands": [
+                "workbench.action.splitEditor"
+            ]
+        },
+        {
+            "before": [
+                "<C-a>",
+                "s"
+            ],
+            "commands": [
+                "workbench.action.splitEditorDown"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "f"
+            ],
+            "commands": [
+                "editor.action.formatDocument"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "a"
+            ],
+            "commands": [
+                "editor.action.quickFix"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "r",
+                "n"
+            ],
+            "commands": [
+                "editor.action.rename"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "g",
+                "d"
+            ],
+            "commands": [
+                "editor.action.revealDefinition"
+            ]
+        },
+        {
+            "before": [
+                "[",
+                "d"
+            ],
+            "commands": [
+                "editor.action.marker.prev"
+            ]
+        },
+        {
+            "before": [
+                "]",
+                "d"
+            ],
+            "commands": [
+                "editor.action.marker.next"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "e"
+            ],
+            "commands": [
+                "workbench.action.problems.focus"
+            ]
+        },
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                "J"
+            ],
+            "commands": [
+                "editor.action.moveLinesDownAction"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "editor.action.moveLinesUpAction"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "c"
+            ],
+            "commands": [
+                "editor.action.CommentLine"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "b"
+            ],
+            "commands": [
+                "editor.action.blockComment"
+            ]
+        },
+    ],
+
+    // TODO HIGHLIGHT
+    "todohighlight.isEnable": true,
+    "todohighlight.isCaseSensitive": true,
+    "todohighlight.keywords": [
+        {
+            "text": "TODO:",
+            "backgroundColor": "#2563EB",
+            "borderColor": "#2563EB",
+            "color": "#1F1F1F",
+        },
+        {
+            "text": "NOTE:",
+            "backgroundColor": "#2563EB",
+            "borderColor": "#2563EB",
+            "color": "#1F1F1F",
+        },
+        {
+            "text": "PERF:",
+            "backgroundColor": "#10B981",
+            "borderColor": "#10B981",
+        },
+        {
+            "text": "OPTIM:",
+            "backgroundColor": "#10B981",
+            "borderColor": "#10B981",
+        },
+        {
+            "text": "TEST:",
+            "backgroundColor": "#10B981",
+            "borderColor": "#10B981",
+        },
+        {
+            "text": "HACK:",
+            "backgroundColor": "#FBBF24",
+            "borderColor": "#FBBF24",
+        },
+        {
+            "text": "WARN:",
+            "backgroundColor": "#FBBF24",
+            "borderColor": "#FBBF24",
+        },
+        {
+            "text": "WARNING:",
+            "backgroundColor": "#FBBF24",
+            "borderColor": "#FBBF24",
+        },
+        {
+            "text": "FIX:",
+            "backgroundColor": "#DC2626",
+            "borderColor": "#DC2626",
+        },
+        {
+            "text": "FIXME:",
+            "backgroundColor": "#DC2626",
+            "borderColor": "#DC2626",
+            "color": "#1F1F1F",
+        },
+        {
+            "text": "BUG:",
+            "backgroundColor": "#DC2626",
+            "borderColor": "#DC2626",
+        },
+        {
+            "text": "ISSUE:",
+            "backgroundColor": "#DC2626",
+            "borderColor": "#DC2626",
+        },
+    ],
+    "todohighlight.defaultStyle": {
+        "fontWeight": "bold",
+        "color": "#1F1F1F",
+        "borderRadius": "3px",
+        "border": "1px solid",
+    },
+
+    // CMAKE
+    "cmake.showConfigureWithDebuggerNotification": false,
+    "cmake.showOptionsMovedNotification": false,
+    "cmake.configureSettings": {},
+    "cmake.configureOnOpen": true,
+    "cmake.cmakePath": "/etc/profiles/per-user/josiah/bin/cmake",
+    "cmake.options.statusBarVisibility": "icon",
+    "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "cmake.options.advanced": {
+        "launchTarget": {
+            "statusBarVisibility": "visible"
+        },
+        "buildTarget": {
+            "statusBarVisibility": "visible"
+        },
+    },
+    "[cmake]": {
+        "editor.defaultFormatter": "josetr.cmake-language-support-vscode"
+    },
+
+    // C/CPP
+    "C_Cpp.default.compilerPath": "/usr/bin/clang++",
+
+    // COPILOT
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    "editor.fontFamily": "JetBrainsMonoNL Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": false,
+    "zig.path": "/Users/josiah/zig/zig",
+    "zig.zls.path": "/Users/josiah/Library/Application Support/Code/User/globalStorage/ziglang.vscode-zig/zls_install/zls",
+    "zig.initialSetupDone": true,
+    "editor.minimap.enabled": false,
+    "hexeditor.columnWidth": 16,
+    "hexeditor.showDecodedText": true,
+    "hexeditor.defaultEndianness": "little",
+    "hexeditor.inspectorType": "aside",
+}
