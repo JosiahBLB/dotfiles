@@ -57,6 +57,7 @@
       };
 
       finder = {
+        FXPreferredViewStyle = "clmv";
         _FXShowPosixPathInTitle = true; # show full path in the title
         AppleShowAllExtensions = true; # show all file extensions
         FXEnableExtensionChangeWarning = false; # no file extension change warnings
