@@ -68,7 +68,7 @@ capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp"
 local servers = {
 	"clangd",
 	"nil_ls",
-	"tsserver",
+	"ts_ls",
 	"pyright",
 	"bashls",
 }

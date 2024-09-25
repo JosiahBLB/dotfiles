@@ -77,21 +77,7 @@ vim.keymap.set("n", "<leader>sn", function()
 	builtin.find_files({ cwd = vim.fn.stdpath("config") })
 end, { desc = "[S]earch [N]eovim files" })
 
---[[ Which-key ]]
--- Document existing key chains
-require("which-key").register({
-	["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
-	["<leader>d"] = { name = "[D]ocument", _ = "which_key_ignore" },
-	["<leader>r"] = { name = "[R]ename", _ = "which_key_ignore" },
-	["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
-	["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
-	["<leader>t"] = { name = "[T]oggle", _ = "which_key_ignore" },
-	["<leader>h"] = { name = "Git [H]unk", _ = "which_key_ignore" },
-})
--- visual mode
-require("which-key").register({ ["<leader>h"] = { "Git [H]unk" } }, { mode = "v" })
-
 --[[ Conform ]]
 vim.keymap.set("n", "<leader>f", function()
-	require("conform").format({ async = true, lsp_fallback = true })
+	require("conform").format({ async = true, lsp_format = "fallback" })
 end, { desc = "[F]ormat document" })
