@@ -9,6 +9,7 @@
 
   home.packages = with pkgs; [
     cmake
+    bear
     # TODO: Figure out how to set this font in iterm2
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
