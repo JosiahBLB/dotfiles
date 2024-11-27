@@ -39,12 +39,21 @@
     ];
     # commandline tools
     brews = [
+      "wget"
+
+      # ruby tools
+      "chruby" # ruby verion control
+      "ruby-install"
+
       # c++ glfw projects
       "pkg-config"
       "libxinerama"
       "libxcursor"
       "xorg-server"
       "mesa-glu"
+
+      # database
+      "postgresql@14"
     ];
   };
 

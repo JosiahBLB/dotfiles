@@ -15,8 +15,8 @@
 /gedit
 /nautilus
 
-.zshenv
-.zshrc
+# .zshenv
+# .zshrc
 .zcompdump*
 *.log
 result
