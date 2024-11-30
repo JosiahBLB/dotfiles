@@ -17,6 +17,16 @@ return {
       },
       indent = { enable = true, disable = { 'ruby' } },
     },
+    dependencies = {
+      {
+        'nvim-treesitter/nvim-treesitter-context',
+        config = function()
+          vim.keymap.set('n', '[c', function()
+            require('treesitter-context').go_to_context(vim.v.count1)
+          end, { silent = true })
+        end,
+      },
+    },
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:
     --
