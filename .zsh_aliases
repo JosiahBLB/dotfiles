@@ -1,0 +1,26 @@
+
+#===============================================================================
+# User Aliases
+#-------------------------------------------------------------------------------
+
+# listing
+alias ls="lsd --color=auto"
+alias la="lsd -lAh --color=auto"
+alias tree="lsd --tree"
+alias treed="lsd -Ad --tree"
+alias lg="git ls-files --others --exclude-standard --cached --directory | grep -v '/' | xargs lsd"
+
+# nvim
+alias -- vimdiff='nvim -d'
+alias vi='nvim'
+
+# git
+alias gs='git status'
+alias gca='git commit --amend --no-edit'
+alias gf='git fetch'
+
+#===============================================================================
+# FPT Aliases
+#-------------------------------------------------------------------------------
+
+

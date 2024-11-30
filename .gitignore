@@ -1,0 +1,6 @@
+.zcompdump*
+.zsh_history
+.zsh_fpt
+
+grammarly-languageserver/
+lazygit/
