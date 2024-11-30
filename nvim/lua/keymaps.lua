@@ -19,13 +19,13 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
 -- pasting
-vim.keymap.set('x', '<leader>p', [["_d"*P]], { desc = 'Paste and replace selection from clipboard' })
-vim.keymap.set('n', '<leader>p', [["*p]], { desc = 'Paste from system clipboard' })
-vim.keymap.set('n', '<leader>P', [["*P]], { desc = 'Paste from system clipboard' })
+vim.keymap.set('x', '<leader>p', [["_d"+P]], { desc = 'Paste and replace selection from clipboard' })
+vim.keymap.set('n', '<leader>p', [["+p]], { desc = 'Paste from system clipboard' })
+vim.keymap.set('n', '<leader>P', [["+P]], { desc = 'Paste from system clipboard' })
 -- copying
-vim.keymap.set({ 'n', 'v' }, '<M-c>', [["*y]], { desc = 'Yank to system clipboard' })
-vim.keymap.set('n', '<leader>Y', [["*Y]], { desc = 'Yank to system clipboard' })
-vim.keymap.set({ 'n', 'v' }, '<leader>y', [["*y]], { desc = 'Yank to system clipboard' })
+vim.keymap.set({ 'n', 'v' }, '<M-c>', [["+y]], { desc = 'Yank to system clipboard' })
+vim.keymap.set('n', '<leader>Y', [["+Y]], { desc = 'Yank to system clipboard' })
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'Yank to system clipboard' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
