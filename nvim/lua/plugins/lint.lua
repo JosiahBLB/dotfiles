@@ -9,7 +9,7 @@ return {
         -- markdown = { 'markdownlint' },
         bash = { 'shellcheck' },
         cmake = { 'cmakelint' },
-        python = { 'pylint' },
+        python = { 'ruff' },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,

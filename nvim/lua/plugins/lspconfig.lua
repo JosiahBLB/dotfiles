@@ -201,7 +201,7 @@ return {
 
         --[[ Linters ]]
         'cmakelint',
-        'pylint',
+        'ruff',
         'shellcheck', -- bash
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }

@@ -1,0 +1,437 @@
+{
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+        "Ubuntu (WSL)": {
+            "path": "C:\\WINDOWS\\System32\\wsl.exe",
+            "args": [
+                "-d",
+                "Ubuntu"
+            ]
+        }
+    },
+    // VIM
+    "vim.highlightedyank.enable": true,
+    "vim.smartRelativeLine": true,
+    "vim.leader": "<space>",
+    "vim.foldfix": true,
+    "vim.handleKeys": {
+        "<C-d>": true,
+        "<C-a>": true,
+        "<C-n>": false,
+        "<C-i>": false,
+        "<C-o>": false,
+        "<C-s>": false,
+        "<C-w>": false,
+        "<C-z>": false,
+        "<C-f>": false,
+        "<C-c>": false,
+        "<C-v>": false,
+    },
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<Esc>"
+            ],
+            "commands": [
+                ":nohl",
+                "editor.action.clearSearchResults"
+            ]
+        },
+        {
+            "before": [
+                "<Esc>"
+            ],
+            "commands": [
+                "workbench.action.closeSidebar"
+            ],
+            "when": [
+                "searchViewletVisible"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        { // search keybindings
+            "before": [
+                "<Leader>",
+                "s",
+                "k"
+            ],
+            "commands": [
+                "workbench.action.openGlobalKeybindings",
+                "keybindings.editor.clearSearchResults",
+                "keybindings.editor.searchKeybindings"
+            ]
+        },
+        { // search files
+            "before": [
+                "<Leader>",
+                "s",
+                "f"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        { // grep search (all files)
+            "before": [
+                "<Leader>",
+                "s",
+                "g"
+            ],
+            "commands": [
+                "workbench.action.findInFiles"
+            ]
+        },
+        { // centred half page jump up
+            "before": [
+                "<C-u>"
+            ],
+            "after": [
+                "<C-u>",
+                "z",
+                "z"
+            ]
+        },
+        { // centred half page jump down
+            "before": [
+                "<C-d>"
+            ],
+            "after": [
+                "<C-d>",
+                "z",
+                "z"
+            ]
+        },
+        { // centred forward search
+            "before": [
+                "n"
+            ],
+            "after": [
+                "n",
+                "z",
+                "z",
+                "z",
+                "v"
+            ]
+        },
+        { // centred backward search
+            "before": [
+                "N"
+            ],
+            "after": [
+                "N",
+                "z",
+                "z",
+                "z",
+                "v"
+            ]
+        },
+        { // comment line
+            "before": [
+                "g",
+                "c",
+                "c"
+            ],
+            "commands": [
+                "editor.action.CommentLine"
+            ]
+        },
+        { // comment block
+            "before": [
+                "g",
+                "b",
+                "c"
+            ],
+            "commands": [
+                "editor.action.blockComment"
+            ]
+        },
+        { // format document
+            "before": [
+                "<leader>",
+                "f"
+            ],
+            "commands": [
+                "editor.action.formatDocument"
+            ]
+        },
+        { // code action
+            "before": [
+                "<leader>",
+                "c",
+                "a"
+            ],
+            "commands": [
+                "editor.action.quickFix"
+            ]
+        },
+        { // rename
+            "before": [
+                "<leader>",
+                "r",
+                "n"
+            ],
+            "commands": [
+                "editor.action.rename"
+            ]
+        },
+        { // goto definition
+            "before": [
+                "<leader>",
+                "g",
+                "d"
+            ],
+            "commands": [
+                "editor.action.revealDefinition"
+            ]
+        },
+        { // previous diagnostic
+            "before": [
+                "[",
+                "d"
+            ],
+            "commands": [
+                "editor.action.marker.prev"
+            ]
+        },
+        { // next diagnostic
+            "before": [
+                "]",
+                "d"
+            ],
+            "commands": [
+                "editor.action.marker.next"
+            ]
+        },
+        { // open quickfix list
+            "before": [
+                "<leader>",
+                "q"
+            ],
+            "commands": [
+                "workbench.action.problems.focus"
+            ],
+        },
+        { // open explorer
+            "before": [
+                "<leader>",
+                "t"
+            ],
+            "commands": [
+                "workbench.view.explorer",
+            ],
+        },
+        //
+        // Splits Navigation and Creation
+        //
+        { // up
+            "before": [
+                "<C-k>"
+            ],
+            "commands": [
+                "workbench.action.focusAboveGroup"
+            ]
+        },
+        { // down
+            "before": [
+                "<C-j>"
+            ],
+            "commands": [
+                "workbench.action.focusBelowGroup"
+            ]
+        },
+        { // left
+            "before": [
+                "<C-h>"
+            ],
+            "commands": [
+                "workbench.action.focusLeftGroup"
+            ]
+        },
+        { // right
+            "before": [
+                "<C-l>"
+            ],
+            "commands": [
+                "workbench.action.focusRightGroup"
+            ]
+        },
+        { // split left and right
+            "before": [
+                "<C-a>",
+                "v"
+            ],
+            "commands": [
+                "workbench.action.splitEditor"
+            ]
+        },
+        { // split up and down
+            "before": [
+                "<C-a>",
+                "s"
+            ],
+            "commands": [
+                "workbench.action.splitEditorDown"
+            ]
+        },
+        { // yank to system clipboard
+            "before": [
+                "<Leader>",
+                "y"
+            ],
+            "after": [
+                "\"",
+                "+",
+                "y",
+            ]
+        },
+        { // paste from system clipboard
+            "before": [
+                "<Leader>",
+                "p"
+            ],
+            "after": [
+                "\"",
+                "+",
+                "p",
+            ]
+        },
+        { // paste from system clipboard
+            "before": [
+                "<Leader>",
+                "P"
+            ],
+            "after": [
+                "\"",
+                "+",
+                "P",
+            ]
+        },
+        { // paste from system clipboard
+            "before": [
+                "<Leader>",
+                "g",
+                "D",
+            ],
+            "commands": [
+                "editor.action.referenceSearch.trigger"
+            ],
+        },
+        { // stage hunk
+            "before": [
+                "<Leader>",
+                "h",
+                "s",
+            ],
+            "commands": [
+                "git.stageSelectedRanges"
+            ],
+        },
+    ],
+    "vim.visualModeKeyBindings": [
+        { // move line down
+            "before": [
+                "J"
+            ],
+            "commands": [
+                "editor.action.moveLinesDownAction"
+            ]
+        },
+        { // move line up
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "editor.action.moveLinesUpAction"
+            ]
+        },
+        { // comment line
+            "before": [
+                "g",
+                "c"
+            ],
+            "commands": [
+                "editor.action.CommentLine"
+            ]
+        },
+        { // block comment
+            "before": [
+                "g",
+                "b"
+            ],
+            "commands": [
+                "editor.action.blockComment"
+            ]
+        },
+        { // yank to system clipboard
+            "before": [
+                "<Leader>",
+                "y"
+            ],
+            "after": [
+                "\"",
+                "+",
+                "y",
+            ]
+        },
+        { // paste from system clipboard
+            "before": [
+                "<Leader>",
+                "p"
+            ],
+            "after": [
+                "\"",
+                "+",
+                "p",
+            ]
+        },
+        { // paste from system clipboard
+            "before": [
+                "<Leader>",
+                "P"
+            ],
+            "after": [
+                "\"",
+                "+",
+                "P",
+            ]
+        },
+        { // stage hunk
+            "before": [
+                "<Leader>",
+                "h",
+                "s",
+            ],
+            "commands": [
+                "git.stageSelectedRanges"
+            ],
+        },
+    ],
+    "workbench.startupEditor": "none",
+    "git.autofetch": true,
+    "cmake.pinnedCommands": [
+        "workbench.action.tasks.configureTaskRunner",
+        "workbench.action.tasks.runTask"
+    ],
+    "cSpell.userWords": [
+        "togglable",
+        "toggleable"
+    ],
+    "cmake.showOptionsMovedNotification": false,
+    "cmake.showConfigureWithDebuggerNotification": false,
+}

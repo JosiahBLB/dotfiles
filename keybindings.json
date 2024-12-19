@@ -1,0 +1,120 @@
+[
+    // Navigation
+    {
+        "key": "ctrl+n",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetVisible && editorTextFocus"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetVisible && editorTextFocus"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.action.quickOpenNavigateNext",
+        "when": "!editorTextFocus && inQuickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpenNavigatePrevious",
+        "when": "!editorTextFocus && inQuickOpen"
+    },
+    // { TODO: Fix to allow nav between editor and sidebar
+    //     "key": "ctrl+l",
+    //     "command": "workbench.action.focusActiveEditorGroup",
+    //     "when": "sideBarFocus"
+    // },
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "escape",
+        "command": "removeSecondaryCursors",
+        "when": "editorHasMultipleSelections && editorTextFocus && vim.mode == 'Normal'"
+    },
+
+    // A fix for Vim navigation
+    {
+        "key": "ctrl+i",
+        "command": "workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "editor.action.addSelectionToNextFindMatch",
+        "when": "!suggestWidgetVisible && editorTextFocus" 
+    },
+
+    // Toggle reference search
+    {
+        "key": "escape",
+        "command": "closeReferenceSearch",
+        "when": "referenceSearchVisible && vim.mode == 'Normal'"
+    },
+
+    // Toggle explorer
+    {
+        "key": "space t",
+        "command": "workbench.view.explorer",
+        "when": "!editorFocus && !inputFocus && !explorerViewletVisible"
+    },
+    {
+        "key": "escape",
+        "command": "search.action.focusSearchList",
+        "when": "!editorFocus && inputFocus && searchViewletVisible"
+    },
+    {
+        "key": "escape",
+        "command": "workbench.action.closeSidebar",
+        "when": "!editorFocus && !inputFocus && explorerViewletVisible"
+    },
+    {
+        "key": "/",
+        "command": "list.find",
+        "when": "!editorFocus && listFocus && listSupportsFind"
+    },
+    // Toggle Search
+    {
+        "key": "escape",
+        "command": "search.action.focusSearchList",
+        "when": "!editorFocus && inputFocus && searchViewletVisible"
+    },
+    {
+        "key": "escape",
+        "command": "workbench.action.closeSidebar",
+        "when": "!editorFocus && !inputFocus && searchViewletVisible"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "search.action.focusSearchList",
+        "when": "!editorFocus && !inQuickOpen && inputFocus && searchViewletVisible"
+    },
+    // Toggle Problems 
+    {
+        "key": "escape",
+        "command": "workbench.actions.view.problems",
+        "when": "!editorFocus && problemFocus"
+    },
+    {
+        "key": "escape",
+        "command": "problems.action.focusProblemsFromFilter",
+        "when": "!editorFocus && problemsFilterFocus"
+    },
+
+    // Disabled
+    {
+        "key": "ctrl+n",
+        "command": "-extension.vim_ctrl+n",
+        "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-extension.vim_ctrl+p",
+        "when": "editorTextFocus && vim.active && vim.use<C-p> && !inDebugRepl || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-p> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.files.newUntitledFile"
+    },
+]
