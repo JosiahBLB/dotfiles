@@ -139,6 +139,7 @@
     nodePackages_latest.typescript-language-server
     nodePackages_latest.bash-language-server
     nil # nix
+    zls
 
     # FORMATTERS
     nixfmt-rfc-style

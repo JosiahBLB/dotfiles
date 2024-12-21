@@ -71,6 +71,7 @@ local servers = {
 	"ts_ls",
 	"pyright",
 	"bashls",
+	"zls",
 }
 
 for _, lsp in ipairs(servers) do
