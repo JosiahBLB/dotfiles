@@ -81,3 +81,59 @@ end, { desc = "[S]earch [N]eovim files" })
 vim.keymap.set("n", "<leader>f", function()
 	require("conform").format({ async = true, lsp_format = "fallback" })
 end, { desc = "[F]ormat document" })
+
+--[[ Nvim-dap]]
+local dap = require("dap")
+
+vim.keymap.set("n", "<leader>dk", function()
+	dap.continue()
+end, { desc = "Continue" })
+
+vim.keymap.set("n", "<leader>dq", function()
+	dap.close()
+	require("dapui").close()
+end, { desc = "Close" })
+
+vim.keymap.set("n", "<leader>dl", function()
+	dap.run_last()
+end, { desc = "Run last" })
+
+vim.keymap.set("n", "<leader>b", function()
+	dap.toggle_breakpoint()
+end, { desc = "Toggle breakpoint" })
+
+vim.keymap.set("n", "<leader>dr", function()
+	dap.repl.open()
+end, { desc = "Open REPL" })
+
+vim.keymap.set("n", "<leader>db", function()
+	dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
+end, { desc = "Set conditional breakpoint" })
+
+vim.keymap.set("n", "<leader>dc", function()
+	dap.run_to_cursor()
+end, { desc = "Continue to cursor" })
+
+vim.keymap.set("n", "<leader>ds", function()
+	dap.step_into()
+end, { desc = "Step into" })
+
+vim.keymap.set("n", "<leader>di", function()
+	dap.step_out()
+end, { desc = "Step out" })
+
+vim.keymap.set("n", "<leader>dd", function()
+	dap.step_over()
+end, { desc = "Step over" })
+
+vim.keymap.set("n", "<leader>dp", function()
+	dap.pause()
+end, { desc = "Pause execution" })
+
+vim.keymap.set("n", "<leader>de", function()
+	dap.goto_()
+end, { desc = "Edit source" })
+
+vim.keymap.set("n", "<leader>dw", function()
+	dap.ui.widgets.hover()
+end, { desc = "Show variables" })

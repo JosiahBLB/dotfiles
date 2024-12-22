@@ -100,14 +100,14 @@
       {
         plugin = conform-nvim;
         type = "lua";
-        config = builtins.readFile ./plugins/auto-format.lua;
+        config = builtins.readFile ./plugins/conform.lua;
       }
 
       # auto-completion
       {
         plugin = nvim-cmp; # https://github.com/hrsh7th/nvim-cmp
         type = "lua";
-        config = builtins.readFile ./plugins/auto-completion.lua;
+        config = builtins.readFile ./plugins/nvim-cmp.lua;
       }
       cmp-buffer # current buffer as completion source | https://github.com/hrsh7th/cmp-buffer/
       cmp-path # file paths as completion source | https://github.com/hrsh7th/cmp-path/
@@ -115,13 +115,21 @@
       cmp-nvim-lsp # LSP as completion source | https://github.com/hrsh7th/cmp-nvim-lsp/
       cmp_luasnip # snippets autocompletion extension for nvim-cmp | https://github.com/saadparwaiz1/cmp_luasnip/
       cmp-nvim-lsp-signature-help # https://github.com/hrsh7th/cmp-nvim-lsp-signature-help/
-      nvim-autopairs # crate matching brackets
+      nvim-autopairs # create matching brackets
+
+      # debugging
+      nvim-dap-ui
+      {
+        plugin = nvim-dap;
+        type = "lua";
+        config = builtins.readFile ./plugins/nvim-dap.lua;
+      }
 
       # lsp
       {
-        plugin = neodev-nvim;
+        plugin = lazydev-nvim;
         type = "lua";
-        config = ''require('neodev').setup({library = { plugins = { "nvim-dap-ui" }, types = true }, })'';
+        config = ''require('lazydev').setup({library = { plugins = { "nvim-dap-ui" }, }, })'';
       }
       {
         plugin = nvim-lspconfig;
@@ -155,5 +163,8 @@
 
     # DEPENDECIES
     lua52Packages.jsregexp # luasnip dep
+
+    # DEBBUGERS
+    lldb
   ];
 }
