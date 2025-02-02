@@ -23,6 +23,7 @@
       vim-sleuth # detect tabstop and shiftwidth automatically
       which-key-nvim # key binding help
       vim-visual-multi # multi-cursors like in vscode
+      transparent-nvim # enables background transparency
 
       # keymaps for surrounding selections with any character i.e {} or []
       {
@@ -119,6 +120,7 @@
 
       # debugging
       nvim-dap-ui
+      nvim-dap-virtual-text
       {
         plugin = nvim-dap;
         type = "lua";

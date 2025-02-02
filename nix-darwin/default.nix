@@ -3,9 +3,10 @@
   # define the software you want specific to darwin
   environment.systemPackages = with pkgs; [
     iterm2 # terminal emulator
-    # pkg-config
-    # davinic-resolve # video editing (only avaliable in x86_64-linux)
   ];
+
+  # HACK: Disabling warnings until updated to lastest macos version
+  ids.uids.nixbld = 300;
 
   programs.zsh.enable = true;
   programs.tmux.iTerm2 = true;
@@ -29,6 +30,8 @@
       "visual-studio-code"
       "discord"
       "balenaetcher" # flashing iso's
+      "obsidian" # note taking
+      "ghostty" # terminal emulator
 
       # cli
       "1password-cli"
@@ -37,9 +40,10 @@
       "microsoft-office"
       "microsoft-teams"
     ];
-    # commandline tools
+
     brews = [
       "wget"
+      "groff" # manpage generator
 
       # ruby tools
       "chruby" # ruby verion control

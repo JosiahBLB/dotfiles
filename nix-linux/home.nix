@@ -33,7 +33,10 @@
     tmux
 
     # visual
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    nerd-fonts.jetbrains-mono
+
+    # video editing
+    # davinci-resolve
   ];
 
   # load program specific configurations

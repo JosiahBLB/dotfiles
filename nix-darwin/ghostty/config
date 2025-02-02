@@ -1,0 +1,25 @@
+# 👻-config #
+
+# options
+theme = Dark+
+command = /bin/zsh -c "tmux new -A -s tmux"
+background-opacity = 0.95
+window-padding-y = 0
+window-padding-x = 0
+mouse-hide-while-typing = true
+
+# window opts
+window-decoration=false
+window-padding-color = extend
+window-padding-balance = true
+window-save-state = always
+
+# macos opts
+macos-non-native-fullscreen=visible-menu
+macos-option-as-alt = true
+macos-titlebar-style = hidden
+
+# quick terminal
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+keybind = global:cmd+shift+grave_accent=new_window
+keybind = global:ctrl+alt+t=new_window

@@ -91,6 +91,7 @@ end, { desc = "Continue" })
 
 vim.keymap.set("n", "<leader>dq", function()
 	dap.close()
+	require("nvim-dap-virtual-text").disable()
 	require("dapui").close()
 end, { desc = "Close" })
 
@@ -114,11 +115,11 @@ vim.keymap.set("n", "<leader>dc", function()
 	dap.run_to_cursor()
 end, { desc = "Continue to cursor" })
 
-vim.keymap.set("n", "<leader>ds", function()
+vim.keymap.set("n", "<leader>di", function()
 	dap.step_into()
 end, { desc = "Step into" })
 
-vim.keymap.set("n", "<leader>di", function()
+vim.keymap.set("n", "<leader>do", function()
 	dap.step_out()
 end, { desc = "Step out" })
 
@@ -137,3 +138,7 @@ end, { desc = "Edit source" })
 vim.keymap.set("n", "<leader>dw", function()
 	dap.ui.widgets.hover()
 end, { desc = "Show variables" })
+
+vim.keymap.set("n", "<space>K", function()
+	require("dapui").eval(nil, { enter = true })
+end, { desc = "evaluate variable under cursor" })

@@ -27,7 +27,7 @@
     fzf # fuzzy finder
     fd # find replacement
     tealdeer # man replacement
-    sioyek # pdf reader
+    # sioyek # pdf reader
     tmux # terminal multiplexer (an alternative is zellij)
 
     # networking

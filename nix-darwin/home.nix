@@ -10,8 +10,6 @@
   home.packages = with pkgs; [
     cmake
     bear
-    # TODO: Figure out how to set this font in iterm2
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   # load program specific configurations
@@ -27,18 +25,17 @@
   #   settings.updates.auto_update = true;
   # };
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
+  # use home-manager to manage dotfiles
   home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
 
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
+    # symlink to the nix store copy:
+    # "desired/symlink/location".source = relative/path/to/file/in/nix/flake;
+    ".config/ghostty/config".source = ghostty/config;
+
+    # # set the file content:
+    # "desired/symlink/location".text = builtins.readFile ./relative/path/to/file/in/nix/flake;
+    # or
+    # "desired/symlink/location".text = ''hello world!'';
+    ".config/ghostty/config".text = builtins.readFile ./ghostty/config;
   };
 }

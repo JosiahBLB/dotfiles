@@ -1,34 +1,42 @@
---[[ Nvim-dap ]]
+--[[ nvim-dap ]]
 
 local dap = require("dap")
-dap.set_log_level("DEBUG")
-local handle = io.popen("which lldb-vscode")
-local lldb_path
-if handle then
-	lldb_path = handle:read("*a")
-	handle:close()
+
+-- Setup debugging executables
+local lldb_path = vim.fn.exepath("lldb-dap")
+if lldb_path ~= "" then
+	dap.adapters.lldb = {
+		type = "executable",
+		command = lldb_path,
+		name = "lldb",
+	}
 end
-lldb_path = lldb_path:gsub("%s+", "")
 
--- Set up DAP configurations
-dap.adapters.lldb = {
-	type = "executable",
-	command = lldb_path,
-	name = "lldb",
-}
-
+-- Define language specific debug config
 dap.configurations.cpp = {
 	{
 		name = "Launch",
 		type = "lldb",
 		request = "launch",
 		program = function()
+			-- use the cached file location
+			if vim.g.cpp_executable_file_path and vim.loop.fs_stat(vim.g.cpp_executable_file_path) then
+				return vim.g.cpp_executable_file_path
+			end
+
+			-- get the user input location for the exe
 			local path = vim.fn.input({
 				prompt = "Path to executable: ",
 				default = vim.fn.getcwd() .. "/",
 				completion = "file",
 			})
-			return (path and path ~= "") and path or dap.ABORT
+
+			-- save the new location
+			if path ~= "" then
+				vim.g.cpp_executable_file_path = path
+				return path
+			end
+			return nil
 		end,
 		cwd = "${workspaceFolder}",
 		stopOnEntry = false,
@@ -36,20 +44,37 @@ dap.configurations.cpp = {
 	},
 }
 
--- [[ Nvim-dap-ui ]]
+-- Override run_last implementation
+dap.run_last = function()
+	if dap.last_run then
+		dap.run(dap.last_run.config, dap.last_run.opts)
+	else
+		dap.continue()
+	end
+end
 
-require("dapui").setup({
-	"rcarriga/nvim-dap-ui",
-	dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
-})
+-- [[ nvim-dap-virtual-text ]]
+local vt = require("nvim-dap-virtual-text")
+vt.setup({})
 
--- Automatically open and close the DAP UI
-dap.listeners.after.event_initialized["dapui_config"] = function()
-	require("dapui").open()
+-- [[ nvim-dap-ui ]]
+local ui = require("dapui")
+ui.setup({ "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
+
+-- Open UI and enable virtual text on DAP initialization
+local function open_dap_ui()
+	ui.open()
+	vt.enable()
 end
-dap.listeners.before.event_terminated["dapui_config"] = function()
-	require("dapui").close()
+
+-- Close UI and disable virtual text on DAP termination
+local function close_dap_ui()
+	vt.disable()
+	ui.close()
 end
-dap.listeners.before.event_exited["dapui_config"] = function()
-	require("dapui").close()
-end
+
+dap.listeners.after.event_initialized["dapui_config"] = open_dap_ui
+
+dap.listeners.before.event_terminated["dapui_config"] = close_dap_ui
+
+dap.listeners.before.event_exited["dapui_config"] = close_dap_ui
